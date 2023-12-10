@@ -209,6 +209,26 @@ button:hover{
 .product:hover img{
     opacity:0.7;
 }
+.product .buy-btn{
+    background-color: #fb774b;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3 all;
+    color: white;
+}
+.shop-buy-btn{
+
+    background-color: #fb774b;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3s all;
+    color: white;
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0px);
+    opacity:1;
+}
 
 #banner{ 
     background-image: url('../images/clothes.png '); 

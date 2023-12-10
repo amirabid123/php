@@ -1,10 +1,21 @@
+<?php
+session_start(); 
+if( !empty($_SESSION['cart']) && isset($_POST['checkout']) ){ 
+//let user in 
+//send user to home page 
+}else {
+header('location:index.php' );
+}
+?>
+
+
 <!DOCTYPE html> 
 <html lang="en"> 
 <head>
     <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Single Product</title> 
+    <title>Checkout</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
@@ -19,13 +30,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" >
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="shop.html">Shop</a>
@@ -34,107 +45,63 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ContactUs</a>
+                        <a class="nav-link" href="contact.html">ContactUs</a>
                     </li>
                     <li class="nav-item d-flex">
-                        <i class="fas fa-shopping-bag me-2"></i>
-                        <i class="fas fa-user"></i>
+                        <a href="cart.php"><i class="fas fa-shopping-bag me-2"></i></a>
+                        <a href="account.html"><i class="fas fa-user"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    
-<!--Single Product-->
-    <section class="single-product my-5 pt-5">
-        <div class="row mt-5">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <img class="img-fluid w-100 pb-1" src="assets/images/clothes.png" id="mainImg"/>
-                <div class="small-img-group">
-                    <div class="small-img-col">
-                        <img src="assets/images/shoes1.jpg" width="100%" class="small-img" alt="Shoes">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="assets/images/coat1.jpg" width="100%" class="small-img" alt="Coat">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="assets/images/coats2.jpg" width="100%" class="small-img" alt="Coat">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="assets/images/coats3.jpg" width="100%" class="small-img" alt="Coat">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h6>Men/Shoes</h6>
-                <h3 class="py-4">Men's Fashion</h3>
-                <h2>$155</h2>
-                <input type="number" value="1"/>
-                <button class="buy-btn">Add To Cart</button>
-                <h4 class="mt-5 mb-5">Product détails</h4>
-                <span>The details of this product will be displayed shortly.
-                    The details of this product will be displayed shortly
-                    The details of this product will be displayed shortly
-                    The details of this product will be displayed shortly
-                </span>
-            </div>
-        </div>
-    </section>
 
 
-  <!--relaed Product-->
-  <section id="relaed-Product" class="my-5 pb-5">
-    <div class="container text-center mt-5 py-5"> 
-        <h3>Related Products</h3>
-        <hr>
-        <p>Here you can check out our featured productst</p>
-    </div> 
-    <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/pantaloons.jpg"/>
-            <div class="star">
-                <i class="fas fa-star"></i> 
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i> 
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div> 
-            <h5 class="p-name">Sports Shoes</h5> 
-            <h4 class="p-price">$199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/pantaloons2.jpg"/>
-            <div class="star">
-                <i class="fas fa-star"></i> 
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i> 
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div> 
-            <h5 class="p-name">Sports Shoes</h5> 
-            <h4 class="p-price">$150.0</h4>
-            <button class="buy-btn">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/pantaloons3.jpg"/>
-            <div class="star">
-                <i class="fas fa-star"></i> 
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i> 
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div> 
-            <h5 class="p-name">Sports Shoes</h5> 
-            <h4 class="p-price">$199.9</h4>
-            <button class="buy-btn">Buy Now</button>
-        </div>
+
+
+
+
+
+
+
+    <!--checkout-->
+<section class="my-5 py-5">
+    <div class="container text-center mt-3 pt-5">
+        <h2 class="forn-weight-bold">Check Out</h2>
+        <hr class="mx-auto">
     </div>
+    <div class="mx-auto container">
+        <form id="checkout-form" method="POST" action="server/place_order.php">
+            <div class="form-group checkout-small-elemnt">
+                <label>Name</label>
+                <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Name" required/>
+            </div>
+            <div class="form-group checkout-small-elemnt">
+                <label>Email</label>
+                <input type="text" class="form-control" id="checkout-email" name="email" placeholder="Email" required/>
+            </div>
+            <div class="form-group checkout-small-elemnt">
+                <label>Phone</label>
+                <input type="text" class="form-control" id="checkout-phone" name="phone" placeholder="Phone" required/>
+            </div>
+            <div class="form-group checkout-small-elemnt">
+                <label>City</label>
+                <input type="text" class="form-control" id="checkout-city" name="city" placeholder="city" required/>
+            </div>
+            <div class="form-group checkout-small-elemnt">
+                <label>Adress</label>
+                <input type="text" class="form-control" id="checkout-adress" name="adress" placeholder="adress" required/>
+            </div>
+            <div class="form-group checkout-small-elemnt">
+                <p>Total amount: $<?php echo isset($_SESSION['total']) ? $_SESSION['total'] : 0; ?></p>
+                <input type="submit" class="btn" id="checkout-btn" name="place_order" value="Place Order"/>
+            </div>
+            
+        </form>
 
-    
+</section>
 
-</section> 
 
 
     <!--footer-->
@@ -196,20 +163,8 @@
         </div>
     </div>
 </footer>
-  
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-    <script>
 
-        var mainImg = document.getElementById("mainImg");
-        var smallImg = document.getElementsByClassName ("small-img");
-
-        for(let i=0; i<4; i++){ 
-            smallImg[i].onclick = function(){ 
-            mainImg.src = smallImg[i].src;
-            }
-        }
-    </script>
 </body>
 </html>

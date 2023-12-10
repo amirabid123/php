@@ -354,3 +354,204 @@ footer .copyright img{
     height: 80px;
     margin-right: 10px;
 }
+.cart td input{
+    width: 40px;
+    height: 30px;
+    padding:5px;
+}
+
+.cart td a{
+    color: #fb774b;
+}
+.cart .remove-btn{
+    color: #fb774b;
+    text-decoration:none;
+    font-size: 14px;
+    background-color:none;
+    border:none;
+    width:100%;
+}
+
+.cart .edit-btn{
+    color: #fb774b;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: white;
+    border: none;
+}
+
+.cart .product-info p{
+ margin: 3px;   
+}
+.cart-total{
+    display: flex;
+    justify-content: flex-end;
+    
+
+}
+.cart-total table{
+    width: 100%;
+    max-width: 500px;
+    border-top: 3px solid orange;
+}
+th:last-child{
+    text-align: right;
+}
+.checkout-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.checkout-btn{
+    background-color: #fb774b;
+    color: white;
+}
+
+/* Login */
+
+#login-form{ 
+width: 50%; 
+margin: 5px auto; 
+text-align: center;
+padding: 20px; 
+border-top: 1px solid #fb774b; 
+}
+
+#login-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+#login-form #login-btn{
+    background-color: #fb774b;
+    color: white;
+}
+#login-forn #register-url{
+    color: #fb774b;
+}
+
+/* Register*/
+#register-form{ 
+    width: 50%; 
+    margin: 5px auto; 
+    text-align: center;
+    padding: 20px; 
+    border-top: 1px solid #fb774b; 
+    }
+    
+    #register-form input{
+        width: 50%;
+        margin: 5px auto;
+    }
+    #register-form #register-btn{
+        background-color: #fb774b;
+        color: white;
+    }
+    #register-forn #register-url{
+        color: #fb774b;
+    }
+
+/* Account */
+#account-form{
+width: 50%;
+margin: 35px auto;
+text-align: center;
+padding: 20px;
+}
+
+#account-form input{ 
+    margin:Spx auto;
+}
+#account-form #change-pass-btn{ 
+    color: #fff; 
+    background-color: #fb774b;
+}
+
+#account-form #orders-btn-pass-btn,#logout-btn{
+    color: #fb774b;
+    text-decoration: none;
+}
+/* Orders */
+.orders table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders .product-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.orders .product-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.orders .product-name {
+    margin: 0;
+}
+
+.orders th {
+    padding: 5px 20px;
+    color: #fff;
+    background-color: #fb774b;
+}
+
+.orders th:nth-child(2) {
+    text-align: left;
+}
+.orders th:nth-child(1) {
+    text-align: left;
+}
+
+.orders td {
+    padding: 10px 20px;
+}
+
+.orders td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.orders .order-details-btn{
+    color:white;
+    background-color: #fb774b;
+}
+
+.orders .title{
+    text-align: right;
+}
+
+.orders .order-date {
+    text-align: left;
+}
+.orders th, .orders td {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+/*checkout*/
+
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 48%;
+    margin: 10px auto;
+}
+
+#checkout-form .checkout-large-element{ 
+     width: 95%;
+}
+    #checkout-form .checkout-btn—container{ 
+    margin: 10px; 
+    text-align: right; 
+    margin-right: 40px; 
+}
+#checkout-form #checkout-btn{ 
+    color: #fff; 
+    background-color: #fb774b; 
+}
+
+/* Contact */ 
+#contact span{ 
+    color: #fb774b;
+} 

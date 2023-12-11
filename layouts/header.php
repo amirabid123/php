@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+
+
 <!DOCTYPE html> 
 <html lang="en"> 
 <head>
@@ -24,23 +30,31 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.php">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">ContactUs</a>
-                    </li>
-                    <li class="nav-item d-flex">
-                        <a href="cart.php"><i class="fas fa-shopping-bag me-2"></i></a>
-                        <a href="account.html"><i class="fas fa-user"></i></a>
-                    </li>
-                </ul>
+    <li class="nav-item">
+        <a class="nav-link" href="index.php">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="shop.php">Shop</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="contact.php">ContactUs</a>
+    </li>
+    <li class="nav-item">
+        <a href="cart.php" class="shopping-bag-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <br> <!-- Add a line break here -->
+            <?php if(isset($_SESSION['quantity']) && $_SESSION['quantity'] != 0) {?>
+                <span class="cart-quantity"> <?php echo $_SESSION['quantity']; ?> </span>
+            <?php } ?>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="account.php"><i class="fas fa-user"></i></a>
+    </li>
+</ul>
             </div>
         </div>
     </nav>

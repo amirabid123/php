@@ -3,6 +3,13 @@ session_start();
 
 include('server/connection.php');
 
+
+// Check if user is not logged in, redirect to login.php
+if (!isset($_SESSION['logged_in'])) {
+    header('location: login.php');
+    exit;
+}
+
 if (isset($_SESSION['login_btn'])) {
     header('location: account.php');
     exit;
@@ -42,12 +49,18 @@ if (isset($_POST['change_password'])) {
 
 
 // get orders
-if(isset($_SESSION['logged_in'])){
+if (isset($_SESSION['logged_in'])) {
     $user_id = $_SESSION['user_id'];
     $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id=? ");
-    // Fix the typo here, change 'user_id' to '$user_id'
     $stmt->bind_param('i', $user_id);
     $stmt->execute();
+
+    // Check if the query execution was successful
+    if ($stmt->error) {
+        header('location: account.php?error=' . urlencode($stmt->error));
+        exit;
+    }
+
     $orders = $stmt->get_result();
 }
 ?>

@@ -13,15 +13,6 @@ header('location:index.php' );
     include('layouts/header.php')
 ?>
 
-
-
-
-
-
-
-
-
-
     <!--checkout-->
 <section class="my-5 py-5">
     <div class="container text-center mt-3 pt-5">

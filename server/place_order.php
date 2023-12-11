@@ -3,7 +3,7 @@ session_start();
 include('connection.php');
 
 if(!isset($_SESSION['logged_in'])){ 
-    header (' location: ../checkout.php?message=Please login/register to place an order'); 
+    header ('Location: ../checkout.php?message=Please login/register to place an order'); 
     exit;
     }else{
 
@@ -38,10 +38,14 @@ if(!isset($_SESSION['logged_in'])){
                     $product_price = $product['product_price'];
                     $product_quantity = $product['product_quantity'];
 
+                    // Issue new order and store order info in the database
+                    $order_id = $stmt->insert_id;
+
+                    // Store each single item in order_items database
                     $stmt1 = $conn->prepare("INSERT INTO order_items(order_id, product_id, product_name, product_image, product_price, product_quantity, order_date)
-                                    VALUES(?,?,?,?,?,?,?)");
+                                            VALUES(?,?,?,?,?,?,?)");
                     $stmt1->bind_param('iissiii', $order_id, $product_id, $product_name, $product_image, $product_price, $product_quantity, $order_date);
-                    $stmt1->execute();                
+                    $stmt1->execute();
 
                 }
                 //issue new order and store order info in database
